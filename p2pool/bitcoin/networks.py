@@ -28,10 +28,10 @@ def get_subsidy(nCap, nMaxSubsidy, bnTarget):
 
 nets = dict(
     bitbar=math.Object(
-        P2P_PREFIX='aef904f3'.decode('hex'),
-        P2P_PORT=7777,
+        P2P_PREFIX='e4e8e9e5'.decode('hex'),
+        P2P_PORT=8777,
         ADDRESS_VERSION=25,
-        RPC_PORT=8344,
+        RPC_PORT=8337,
         RPC_CHECK=defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
             'bitbaraddress' in (yield bitcoind.rpc_help()) and
             not (yield bitcoind.rpc_getinfo())['testnet']
@@ -40,14 +40,14 @@ nets = dict(
         BLOCKHASH_FUNC=lambda data: pack.IntType(256).unpack(__import__('ltc_scrypt').getPoWHash(data)),
         POW_FUNC=lambda data: pack.IntType(256).unpack(__import__('ltc_scrypt').getPoWHash(data)),
         BLOCK_PERIOD=600, # s
-        SYMBOL='NVC',
+        SYMBOL='BB',
         CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'BitBar') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/BitBar/') if platform.system() == 'Darwin' else os.path.expanduser('~/.bitbar'), 'bitbar.conf'),
         BLOCK_EXPLORER_URL_PREFIX='http://bitbar.biz/block/',
         ADDRESS_EXPLORER_URL_PREFIX='http://bitbar.biz/address/',
         SANE_TARGET_RANGE=(2**256//2**20//1000 - 1, 2**256//2**20 - 1),
     ),
     bitbar_testnet=math.Object(
-        P2P_PREFIX='abc3f0db'.decode('hex'),
+        P2P_PREFIX='cdf2c0ef'.decode('hex'),
         P2P_PORT=17777,
         ADDRESS_VERSION=111,
         RPC_PORT=8344,
