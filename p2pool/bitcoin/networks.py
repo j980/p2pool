@@ -28,7 +28,7 @@ def get_subsidy(nCap, nMaxSubsidy, bnTarget):
 
 nets = dict(
     bitbar=math.Object(
-        P2P_PREFIX='e4e8e9e5'.decode('hex'),
+        P2P_PREFIX='aef904f3'.decode('hex'),
         P2P_PORT=7777,
         ADDRESS_VERSION=25,
         RPC_PORT=8344,
@@ -47,7 +47,7 @@ nets = dict(
         SANE_TARGET_RANGE=(2**256//2**20//1000 - 1, 2**256//2**20 - 1),
     ),
     bitbar_testnet=math.Object(
-        P2P_PREFIX='cdf2c0ef'.decode('hex'),
+        P2P_PREFIX='abc3f0db'.decode('hex'),
         P2P_PORT=17777,
         ADDRESS_VERSION=111,
         RPC_PORT=8344,
